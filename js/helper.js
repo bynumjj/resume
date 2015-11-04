@@ -46,7 +46,7 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineTitle = '<p class="onlineTitle"><br>%data%</p>';
 var HTMLonlineURL = '<p><a class="onlineURL" href=http://www.vevo.com/watch/rick-astley/Never-Gonna-Give-You-Up/GB1108700010>"%data%"</a></p>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<button class="orange">Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
