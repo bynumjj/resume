@@ -19,6 +19,7 @@ var bio = {
         "contacts": {
             "mobile": "310-387-8056",
             "email": "bynumjj@mac.com",
+            "twitter": "jjeffbynum",
             "github": "bynumjj",
             "location": "Los Angeles"
         },
@@ -75,11 +76,11 @@ var work = {
 
             {
                 "employer": "Self",
-                "title": "Writer",
+                "title": "Dad",
                 "location": "Los Angeles",
                 "dates": "2000 - 2015",
-                "description": "TBD"
-            },
+                "description": "Oversaw the development of two human beings.  Based on original material.  Was involved in all aspects of production."
+                           },
 
             {
                 "employer": "Joss Whedon - Mutant Enemy Productions",
@@ -87,7 +88,8 @@ var work = {
                 "location": "Los Angeles",
                 "dates": "1998 - 1999",
                 "description": "Senior executive in charge of film and television development. Supervised creative direction on all projects, selected writers, wrote extensive editorial notes and synopses, developed treatments and pitches.  Served as the primary liaison to talent agencies, networks, and 20th Century Fox Studio.   Tracked spec material and generated feature film ideas.  Maintained relationships with emerging writers and directors.  Supervised staffing for television series BUFFY THE VAMPIRE SLAYER and ANGEL.  Developed CHEAP SHOTS (half-hour sitcom pilot for the Fox network)."
-            },
+
+                            },
 
             {
                 "employer": "Walt Disney Pictures & Hollywood Pictures",
@@ -95,7 +97,8 @@ var work = {
                 "location": "Los Angeles",
                 "dates": "1993 - 1997",
                 "description": "Oversaw the development of over forty feature film projects.  Selected writers, wrote extensive editorial notes and synopses, developed treatments and pitches.  Served as a liaison to talent agencies and producers.   Tracked spec material and generated feature film ideas.  Maintained relationships with emerging writers and directors.  Produced projects include MIGHTY JOE YOUNG, SIMON BIRCH, JAMES AND THE GIANT PEACH, and TOM AND HUCK."
-            },
+
+                  },
 
             {
                 "employer": "Scott Rudin Productions",
@@ -103,7 +106,7 @@ var work = {
                 "location": "Los Angeles",
                 "dates": "1992-1993",
                 "description": "Worked on the development of ADDAMS FAMILY 2, THE FIRM, NOBODY'S FOOL, GUARDING TESS, LIFE WITH MIKEY, among others.  Wrote story notes and script coverage; developed detailed treatments based on original story ideas, developed relationships with emerging writers and directors."
-            }
+}
 
         ]
                 };
@@ -126,6 +129,7 @@ for (job in work.jobs) {
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
 
+
 }
 
 };
@@ -140,19 +144,20 @@ var projects = {
         "projects": [
 
             {
-                "title": "Project 1",
+                "title": "American Council on Makin' Bacon Pancakes",
                 "dates": "2014",
-                "description": "Fast Food",
-                "images": ["ted"],
-                "url": "http://tbd.com"
+                "description": "Provided &quotFull Stack&quot solutions for industry trade group. ",
+                "images": ["images/pancakes.jpg"],
+                "url": "https://www.makinbaconpancakes.com"
             },
 
             {
-                "title": "Project 2",
+
+                "title": "Manic Energy Drinks",
                 "dates": "2013",
-                "description": "Automotive",
-                "images": ["bob"],
-                "url": "http://tbd.com"
+                "description": "Created product website for demanding entrepreneur.",
+                "images": ["images/maniac.jpg"],
+                "url": "https://www.manicenergy.com"
             }
 
         ]
@@ -167,7 +172,6 @@ projects.display = function() {
     $(".project-entry:last").append(formattedProjectDates);
     var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
     $(".project-entry:last").append(formattedProjectDescription);
-
     if (projects.projects[project].images.length > 0) {
 
     for (image in projects.projects[project].images) {
@@ -175,8 +179,10 @@ projects.display = function() {
         $(".project-entry:last").append(formattedProjectImage);
 }
 }
-    var formattedProjectURL = HTMLprojectURL.replace("%data%", projects.projects[project].url);
-        $(".project-entry:last").append(formattedProjectURL);
+
+
+  var formattedProjectURL = HTMLprojectURL.replace("%data%", projects.projects[project].url);
+    $(".project-entry:last").append(formattedProjectURL);
 
 }
 };
@@ -275,7 +281,7 @@ $("#map").append(googleMap);
 
 // internationalize button
 
-$("#main").append(internationalizeButton)
+$("#header").append(internationalizeButton)
 
 function inName() {
     var name = bio.name;
