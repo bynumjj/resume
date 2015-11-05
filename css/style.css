@@ -13,14 +13,12 @@
 /* navigation */
 
 .nav {
-  padding-bottom: 8px;
+  height: 40px;
 }
 
 .nav ul {
   text-align: center;
   max-width: 90%;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .nav li {
@@ -56,7 +54,6 @@ h2 {
   font-size: 24px;
   color: #999999;
   line-height: 29px;
-  padding: 10px;
 }
 
 h3 {
@@ -199,10 +196,7 @@ a:hover {
 }
 
 .center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding: 2.5% 5% 2.5% 5%;
 }
 
 ul {
