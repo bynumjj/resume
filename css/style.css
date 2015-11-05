@@ -13,7 +13,7 @@
 /* navigation */
 
 .nav {
-  padding: 0px 0 8px 0;
+  padding-bottom: 8px;
 }
 
 .nav ul {
@@ -46,7 +46,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #ede4c1;
   line-height: 48px;
   display: inline;
 }
@@ -125,7 +125,7 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: #465c89;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -146,7 +146,7 @@ a:hover {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #ede4c1;
   display: none;
 }
 
@@ -162,12 +162,12 @@ a:hover {
   margin-bottom: 30px;
 }
 
-.orange {
-  background-color: #F5AE23;
+.khaki {
+  background-color: #9a926a;
 }
 
-.orange-text {
-  color: #F5AE23;
+.cream-text {
+  color: #ede4c1;
 }
 
 .white-text {
@@ -221,6 +221,7 @@ img {
 }
 
 /* Bar chart stuff */
+
 .chart div {
   font: 10px sans-serif;
   background-color: #4A4A4A;
@@ -248,6 +249,8 @@ button {
   float: right;
   margin-top: 80px;
 }
+
+/* media queries */
 
 @media only screen and (max-width:900px) {
   .biopic {
