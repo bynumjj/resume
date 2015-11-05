@@ -3,13 +3,21 @@ var menu = {
     "projects": "Projects",
     "education": "Education",
     "map": "Map"
-  };
+};
 
-$(".nav").append(HTMLnavStart);
-for (link in menu) {
-    var formattedLink = HTMLnavLink.replace("%data%", menu[link]);
+menu.display = function() {
+    $(".nav").append(HTMLnavStart);
+    var formattedLink = HTMLnavLink.replace("%data%", menu.work);
     $("#nav_list").append(formattedLink);
-}
+    var formattedLink = HTMLnavLink.replace("%data%", menu.projects);
+    $("#nav_list").append(formattedLink);
+    var formattedLink = HTMLnavLink.replace("%data%", menu.education);
+    $("#nav_list").append(formattedLink);
+    var formattedLink = HTMLnavLink.replace("%data%", menu.map);
+    $("#nav_list").append(formattedLink);
+};
+
+menu.display();
 
 var bio = {
 
@@ -32,40 +40,52 @@ var bio = {
 
 bio.display = function() {
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedtwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedwelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
-var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedtwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedwelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
+    var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#topContacts").append(formattedmobile);
-$("#topContacts").append(formattedemail);
-$("#topContacts").append(formattedtwitter);
-$("#topContacts").append(formattedgithub);
-$("#topContacts").append(formattedlocation);
-$("#header").append(formattedbioPic);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+    $("#topContacts").append(formattedmobile);
+    $("#topContacts").append(formattedemail);
+    $("#topContacts").append(formattedtwitter);
+    $("#topContacts").append(formattedgithub);
+    $("#topContacts").append(formattedlocation);
+    $("#header").append(formattedbioPic);
 
-$("#footerContacts").append(formattedmobile);
-$("#footerContacts").append(formattedemail);
-$("#footerContacts").append(formattedtwitter);
-$("#footerContacts").append(formattedgithub);
-$("#footerContacts").append(formattedlocation);
+    $("#footerContacts").append(formattedmobile);
+    $("#footerContacts").append(formattedemail);
+    $("#footerContacts").append(formattedtwitter);
+    $("#footerContacts").append(formattedgithub);
+    $("#footerContacts").append(formattedlocation);
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
-    for (skill in bio.skills) {
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-        $("#skills").append(formattedSkill);
+    if (bio.skills.length > 0) {
+        $("#header").append(HTMLskillsStart);
+        for (skill in bio.skills) {
+            var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+            $("#skills").append(formattedSkill);
+        }
+        $("#header").append(formattedwelcomeMsg);
     }
-    $("#header").append(formattedwelcomeMsg);
-}
+
+    $("#header").append(internationalizeButton)
+
+    function inName() {
+        var name = bio.name;
+        console.log(name);
+        name = name.trim().split(" ");
+        name[1] = name[1].toUpperCase();
+        name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+        return name[0] + " " + name[1];
+    }
+
 };
 
 bio.display();
@@ -77,39 +97,39 @@ var work = {
 
     "jobs": [
 
-    {
-        "employer": "Self",
-        "title": "Dad",
-        "location": "Los Angeles",
-        "dates": "2000 - 2015",
-        "description": "Oversaw the development of two human beings.  Based on original material.  Was involved in all aspects of production."
-    },
+        {
+            "employer": "Self",
+            "title": "Dad",
+            "location": "Los Angeles",
+            "dates": "2000 - 2015",
+            "description": "Oversaw the development of two human beings.  Based on original material.  Was involved in all aspects of production."
+        },
 
-    {
-        "employer": "Joss Whedon - Mutant Enemy Productions",
-        "title": "Senior Vice President",
-        "location": "Los Angeles",
-        "dates": "1998 - 1999",
-        "description": "Senior executive in charge of film and television development. Supervised creative direction on all projects, selected writers, wrote extensive editorial notes and synopses, developed treatments and pitches.  Served as the primary liaison to talent agencies, networks, and 20th Century Fox Studio.   Tracked spec material and generated feature film ideas.  Maintained relationships with emerging writers and directors.  Supervised staffing for television series BUFFY THE VAMPIRE SLAYER and ANGEL.  Developed CHEAP SHOTS (half-hour sitcom pilot for the Fox network)."
+        {
+            "employer": "Joss Whedon - Mutant Enemy Productions",
+            "title": "Senior Vice President",
+            "location": "Los Angeles",
+            "dates": "1998 - 1999",
+            "description": "Senior executive in charge of film and television development. Supervised creative direction on all projects, selected writers, wrote extensive editorial notes and synopses, developed treatments and pitches.  Served as the primary liaison to talent agencies, networks, and 20th Century Fox Studio.   Tracked spec material and generated feature film ideas.  Maintained relationships with emerging writers and directors.  Supervised staffing for television series BUFFY THE VAMPIRE SLAYER and ANGEL.  Developed CHEAP SHOTS (half-hour sitcom pilot for the Fox network)."
 
-    },
+        },
 
-    {
-        "employer": "Walt Disney Pictures & Hollywood Pictures",
-        "title": "Director of Production",
-        "location": "Los Angeles",
-        "dates": "1993 - 1997",
-        "description": "Oversaw the development of over forty feature film projects.  Selected writers, wrote extensive editorial notes and synopses, developed treatments and pitches.  Served as a liaison to talent agencies and producers.   Tracked spec material and generated feature film ideas.  Maintained relationships with emerging writers and directors.  Produced projects include MIGHTY JOE YOUNG, SIMON BIRCH, JAMES AND THE GIANT PEACH, and TOM AND HUCK."
+        {
+            "employer": "Walt Disney Pictures & Hollywood Pictures",
+            "title": "Director of Production",
+            "location": "Los Angeles",
+            "dates": "1993 - 1997",
+            "description": "Oversaw the development of over forty feature film projects.  Selected writers, wrote extensive editorial notes and synopses, developed treatments and pitches.  Served as a liaison to talent agencies and producers.   Tracked spec material and generated feature film ideas.  Maintained relationships with emerging writers and directors.  Produced projects include MIGHTY JOE YOUNG, SIMON BIRCH, JAMES AND THE GIANT PEACH, and TOM AND HUCK."
 
-    },
+        },
 
-    {
-        "employer": "Scott Rudin Productions",
-        "title": "Creative Executive",
-        "location": "Los Angeles",
-        "dates": "1992-1993",
-        "description": "Worked on the development of ADDAMS FAMILY 2, THE FIRM, NOBODY'S FOOL, GUARDING TESS, LIFE WITH MIKEY, among others.  Wrote story notes and script coverage; developed detailed treatments based on original story ideas, developed relationships with emerging writers and directors."
-    }
+        {
+            "employer": "Scott Rudin Productions",
+            "title": "Creative Executive",
+            "location": "Los Angeles",
+            "dates": "1992-1993",
+            "description": "Worked on the development of ADDAMS FAMILY 2, THE FIRM, NOBODY'S FOOL, GUARDING TESS, LIFE WITH MIKEY, among others.  Wrote story notes and script coverage; developed detailed treatments based on original story ideas, developed relationships with emerging writers and directors."
+        }
 
     ]
 
@@ -141,26 +161,28 @@ var projects = {
 
     "projects": [
 
-    {
-        "title": "American Council on Makin' Bacon Pancakes",
-        "dates": "2014",
-        "description": "Provided &quotFull Stack&quot solutions for industry trade group. ",
-        "images": ["images/pancakes.jpg"],
-        "url": "https://www.makinbaconpancakes.com"
-    },
+        {
+            "title": "American Council on Makin' Bacon Pancakes",
+            "dates": "2014",
+            "description": "Provided &quotFull Stack&quot solutions for industry trade group. ",
+            "images": ["images/pancakes.jpg"],
+            "url": "https://www.makinbaconpancakes.com"
+        },
 
-    {
-        "title": "Manic Energy Drinks",
-        "dates": "2013",
-        "description": "Created product website for demanding entrepreneur.",
-        "images": ["images/maniac.jpg"],
-        "url": "https://www.manicenergy.com"
-    }
+        {
+            "title": "Manic Energy Drinks",
+            "dates": "2013",
+            "description": "Created product website for demanding entrepreneur.",
+            "images": ["images/maniac.jpg"],
+            "url": "https://www.manicenergy.com"
+        }
 
     ]
 }
 
 projects.display = function() {
+
+
     for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
         var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -191,39 +213,39 @@ var education = {
 
     "schools": [
 
-    {
-        "name": "UCLA Anderson School of Management",
-        "location": "Los Angeles, CA",
-        "degree": "M.B.A.",
-        "major": ["Marketing"],
-        "dates": 1992
-    },
+        {
+            "name": "UCLA Anderson School of Management",
+            "location": "Los Angeles, CA",
+            "degree": "M.B.A.",
+            "major": ["Marketing"],
+            "dates": 1992
+        },
 
-    {
-        "name": "Yale University",
-        "location": "New Haven, CT",
-        "degree": "B.A.",
-        "major": ["East Asian Studies, Chinese concentration"],
-        "dates": 1985
-    }
+        {
+            "name": "Yale University",
+            "location": "New Haven, CT",
+            "degree": "B.A.",
+            "major": ["East Asian Studies, Chinese concentration"],
+            "dates": 1985
+        }
 
     ],
 
     "onlineCourses": [
 
-    {
-        "title": "Nanodegree: Front-End Web Developer",
-        "school": "Udacity",
-        "dates": 2015,
-        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-    },
+        {
+            "title": "Nanodegree: Front-End Web Developer",
+            "school": "Udacity",
+            "dates": 2015,
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+        },
 
-    {
-        "title": "HTML & CSS   -   JavaScript   -   jQuery   -   Make a Website",
-        "school": "Codecademy",
-        "dates": 2015,
-        "url": "https://www.codecademy.com/learn"
-    }
+        {
+            "title": "HTML & CSS   -   JavaScript   -   jQuery   -   Make a Website",
+            "school": "Codecademy",
+            "dates": 2015,
+            "url": "https://www.codecademy.com/learn"
+        }
 
     ]
 
@@ -259,23 +281,24 @@ education.display = function() {
             $(".education-entry:last").append(formattedOnlineURL);
         }
     }
+
+
 };
 
 education.display();
 
 // map section
 
-$("#map").append(googleMap);
+var map = function() {
 
-// internationalize button
+    $("#map").append(googleMap);
+};
 
-$("#header").append(internationalizeButton)
+map.display();
 
-function inName() {
-    var name = bio.name;
-    console.log(name);
-    name = name.trim().split(" ");
-    name[1] = name[1].toUpperCase();
-    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
-    return name[0] + " " + name[1];
-}
+
+
+
+
+
+
