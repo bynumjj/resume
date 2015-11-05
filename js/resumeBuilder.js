@@ -3,7 +3,7 @@ var menu = {
     "projects": "Projects",
     "education": "Education",
     "map": "Map"
-}
+  };
 
 $(".nav").append(HTMLnavStart);
 for (link in menu) {
@@ -27,7 +27,10 @@ var bio = {
     "welcomeMsg": "Welcome to my page.",
     "skills": ["Languages:  HTML, CSS, JavaScript", "Business Writing", "Project Management"],
     "bioPic": "images/biopic.jpg"
+
 };
+
+bio.display = function() {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -63,6 +66,10 @@ if (bio.skills.length > 0) {
     }
     $("#header").append(formattedwelcomeMsg);
 }
+};
+
+bio.display();
+
 
 //work section
 
